@@ -1,6 +1,6 @@
 ## Description
 
-cgabot server application.
+cgabot server application
 
 ## Installation
 
@@ -12,12 +12,12 @@ yarn install
 
 ## Setting .env variables
 
-Generate [Imgbb's API](api.imgbb.com) key:
+Generate [imgbb's API](https://api.imgbb.com) key:
 ```bash
 IMGBB_TOKEN
 ```
 
-Follow [instructions](firebase.google.com/docs/admin/setup#initialize-sdk) and generate Firebase Private Key for Admin SDK:
+Follow [instructions](https://firebase.google.com/docs/admin/setup#initialize-sdk) and generate Firebase Private Key for Admin SDK:
 ```bash
 FIREBASE_PROJECT_ID
 FIREBASE_PRIVATE_KEY
