@@ -7,7 +7,7 @@ export class ImageHostingService {
   private logger = new Logger(ImageHostingService.name)
   constructor(private readonly httpService: HttpService, private readonly configService: ConfigService) {}
 
-  readonly #token = this.configService.get<string>('IMGBB_TOKEN')
+  readonly #token = this.configService.get<string>('ImageHosting.token')
 
   upload(name: string, image: string) {
     return new Promise<string>((resolve) => {
