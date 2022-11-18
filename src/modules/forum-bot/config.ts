@@ -3,8 +3,6 @@ export const POSTS_RESUBSCRIBE_INTERVAL = 24 * 60 * 60e3 // 1 day
 export const CHECK_NEW_POSTS_INTERVAL = 5e3 // 5 seconds
 export const CHECK_POSTS_INTERVAL = 15e3 // 15 seconds
 
-export const CLUB_LINK = 'https://www.chess.com/club/custom-variants'
-
 export const CHECK_POSTS_DURATION: [number, moment.unitOfTime.DurationConstructor] = [15, 'day']
 export const CHECK_POSTS_LIMIT = 15
 

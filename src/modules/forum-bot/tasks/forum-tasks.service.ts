@@ -1,8 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 import parseHTML from 'node-html-parser'
 import { concatMap, exhaustMap, filter, from, mergeAll, Subject, timer } from 'rxjs'
 import { ChesscomService } from 'src/modules/chesscom/chesscom.service'
-import { CHECK_NEW_POSTS_INTERVAL, CHECK_POSTS_INTERVAL, CLUB_LINK } from '../config'
+import { CHECK_NEW_POSTS_INTERVAL, CHECK_POSTS_INTERVAL } from '../config'
 import { PostsService } from '../posts/posts.service'
 import { PostEvaluationService } from './post-evaluation.service'
 
@@ -13,11 +14,14 @@ export class ForumTasksService {
     private readonly postsService: PostsService,
     private readonly chesscomService: ChesscomService,
     private readonly postEvaluationService: PostEvaluationService,
+    private readonly configService: ConfigService,
   ) {}
+
+  private clubLink = this.configService.get<string>('ForumBot.clubLink') ?? ''
 
   checkNewPosts = timer(0, CHECK_NEW_POSTS_INTERVAL).pipe(
     exhaustMap(async () => {
-      const links = await this.chesscomService.getResentPosts(CLUB_LINK)
+      const links = await this.chesscomService.getResentPosts(this.clubLink)
       if (links && links.length) {
         const newPostIds = await this.postsService.addNewPosts(links)
         if (newPostIds.length) this.checkSpecificPostsSubject.next(newPostIds)
