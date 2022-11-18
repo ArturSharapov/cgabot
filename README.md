@@ -1,6 +1,6 @@
 ## Description
 
-cgabot server application.
+cgabot server application
 
 ## Installation
 
@@ -12,7 +12,7 @@ yarn install
 
 ## Setting .env variables
 
-Generate [Imgbb's API](https://api.imgbb.com) key:
+Generate [imgbb's API](https://api.imgbb.com) key:
 ```bash
 IMGBB_TOKEN
 ```
