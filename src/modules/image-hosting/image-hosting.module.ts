@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common'
 import { ConfigModule, registerAs } from '@nestjs/config'
 import { ImageHostingService } from './image-hosting.service'
 
-const imageHostingEnvs = registerAs('ForumBot', () => ({
+const imageHostingEnvs = registerAs('ImageHosting', () => ({
   token: process.env.IMGBB_TOKEN,
 }))
 
