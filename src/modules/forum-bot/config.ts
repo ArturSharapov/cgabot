@@ -1,7 +1,7 @@
 export const POSTS_RESUBSCRIBE_INTERVAL = 24 * 60 * 60e3 // 1 day
 
-export const CHECK_NEW_POSTS_INTERVAL = 5e3 // 5 seconds
-export const CHECK_POSTS_INTERVAL = 15e3 // 15 seconds
+export const CHECK_NEW_POSTS_INTERVAL = 30e3 // 30 seconds
+export const CHECK_POSTS_INTERVAL = 2 * 60e3 // 2 minutes
 
 export const CHECK_POSTS_DURATION: [number, moment.unitOfTime.DurationConstructor] = [15, 'day']
 export const CHECK_POSTS_LIMIT = 15
