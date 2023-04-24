@@ -43,10 +43,10 @@ export const generateResponseTemplate = (post: {
           STATUS_TEXT[post.status]
         }</a></p>
         <p style="font-weight:600;color: #dbe4ed;font-size:12px;text-align: right;margin-top: -28px;margin-left: 230px;">
-          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess New';font-size: 18px;font-weight: 400;padding-right: 4px;">Θ</span><span style="color:#539de9;">${games}</span></span>
-          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess New';font-size: 18px;font-weight: 400;padding-right: 4px;">n</span><span style="color:#539de9;">${players}</span></span>
-          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess New';font-size: 18px;font-weight: 400;padding-right: 4px;">Ἓ</span><span style="color:#539de9;">${duration}</span></span>
-          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess New';font-size: 18px;font-weight: 400;padding-right: 4px;">ὧ</span><span style="color:#539de9;">+${positive}</span><span style="color: #539de9;font-size: 9px;padding: 0 3px;">vs</span><span style="color: #539de9;">-${negative}</span></span>
+          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess V3';font-size: 18px;font-weight: 400;padding-right: 4px;">Θ</span><span style="color:#539de9;">${games}</span></span>
+          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess V3';font-size: 18px;font-weight: 400;padding-right: 4px;">n</span><span style="color:#539de9;">${players}</span></span>
+          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess V3';font-size: 18px;font-weight: 400;padding-right: 4px;">Ἓ</span><span style="color:#539de9;">${duration}</span></span>
+          <span style="padding: 0 10px;white-space: nowrap;"><span style="font-family:'Chess V3';font-size: 18px;font-weight: 400;padding-right: 4px;">ὧ</span><span style="color:#539de9;">+${positive}</span><span style="color: #539de9;font-size: 9px;padding: 0 3px;">vs</span><span style="color: #539de9;">-${negative}</span></span>
         </p>
         <p style="font-weight:600;margin: 11px 0 10px 80px;color:#eaeaea;font-family:inherit;font-size: 12px;color: #539de9;">
           <span style="padding:0 5px;">${OPEN_TESTING_MESSAGE[post.openTesting.status]}</span>
