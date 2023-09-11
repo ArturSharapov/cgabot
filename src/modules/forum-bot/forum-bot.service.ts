@@ -26,7 +26,7 @@ export class ForumBotService implements OnModuleInit {
   }
 
   async onModuleInit() {
-    this.forumTasksService.checkNewPosts.subscribe()
+    // this.forumTasksService.checkNewPosts.subscribe()
     this.forumTasksService.checkPosts.subscribe()
     this.forumTasksService.checkSpecificPostsObservable.subscribe()
   }
