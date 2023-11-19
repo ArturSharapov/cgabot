@@ -19,8 +19,18 @@ export const scripts = {
       const text = (await (await fetch(postLink)).text())
         ?.replace(/ src=".*?"/g, ' ')
         ?.replace(/data-src/g, 'src')
-      const title = newTitle || text.section('<h1 class="post-category-header-title-v5">', '</h1>').trim()
-      const content = (newContent || text.section('comment-post-body">', '<div\\n      class="reactions-multiple-contents"').trim()) + additionalContent
+      const title = newTitle || text.section('<h1 class="post-category-header-title-bold">', '</h1>').trim()
+      
+      let content = ""
+      if (newContent) {
+        content = newContent
+      } else {
+        const domContent = new DOMParser().parseFromString(text, 'text/html').querySelector(".comment-post-body")
+        if (domContent.lastElementChild.classList.contains("reacted-component")) domContent.lastElementChild.remove()
+        content = domContent.innerHTML.trim()
+      }
+      content += additionalContent
+
       const postId = text.section('id="comment-', '"')
       const token = (await (await fetch(\`https://www.chess.com/forum/post?id=\${postId}\`)).text())
         .section('post_forum_topic[_token]" form-error-clear="" value="', '"')
@@ -40,7 +50,7 @@ export const scripts = {
       return [
         response.status === 200,
         (await response.text())
-          ?.section('comment-post-body">', '<div\\n      class="reactions-multiple-contents"')?.trim()
+          ?.section('comment-post-body">', '<div\\n      class="reacted-component"')?.trim()
           ?.replace(/ src=".*?"/g, ' ')
           ?.replace(/data-src/g, 'src')
           ?? ''
