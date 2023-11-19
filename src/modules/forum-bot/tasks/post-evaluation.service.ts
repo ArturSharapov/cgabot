@@ -89,7 +89,7 @@ export class PostEvaluationService {
       return false
     }
     const contentHash = contentHTML.hashCode()
-    const fullTitle = body.querySelector('.post-category-header-title-v5')?.innerText.trim()
+    const fullTitle = body.querySelector('.post-category-header-title-bold')?.innerText.trim()
     const responseStatusText = post.responseId
       ? body.querySelector(`#comment-${post.responseId} #response-status`)?.innerText.trim() ?? STATUS_TEXT[PostStatus.Unknown]
       : STATUS_TEXT[PostStatus.Unknown]
