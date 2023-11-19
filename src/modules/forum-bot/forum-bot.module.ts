@@ -28,6 +28,6 @@ const forumBotEnvs = registerAs('ForumBot', () => ({
     ConfigModule.forFeature(forumBotEnvs),
   ],
   providers: [ForumBotService, ForumTasksService, PostEditsService, PostEvaluationService],
-  exports: [ForumBotService],
+  exports: [ForumBotService, ForumTasksService],
 })
 export class ForumBotModule {}
